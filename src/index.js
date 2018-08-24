@@ -6,7 +6,7 @@ import Index from './containers/Index'
 import blogReducer from './reducers/blog'
 import './index.css'
 
-const store = createStore(blogReducer)
+const store = createStore(blogReducer);
 
 ReactDOM.render(
   <Provider store={store}>
