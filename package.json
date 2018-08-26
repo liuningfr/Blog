@@ -19,6 +19,6 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "antd": "^3.8.2"
+    "antd": "^3.8.3"
   }
 }

@@ -1,11 +1,21 @@
 import React from 'react';
+import { Menu, Icon } from 'antd';
 
-class Menu extends React.Component {
+class TopMenu extends React.Component {
   render() {
     return (
-     <p>menu</p>
-    )
+      <Menu
+        selectedKeys={['mail']}
+        mode="horizontal">
+        <Menu.Item key="articles">
+          <Icon type="book" />文章
+        </Menu.Item>
+        <Menu.Item key="articles">
+          <Icon type="user" />关于我
+        </Menu.Item>
+      </Menu>
+    );
   }
 };
 
-export default Menu;
+export default TopMenu;
