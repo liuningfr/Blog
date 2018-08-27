@@ -1,5 +1,6 @@
 // action types
 const INIT_LIST = 'INIT_LIST';
+const INIT_USER = 'INIT_USER';
 
 const data = [
   {
@@ -21,11 +22,16 @@ const data = [
 ];
 
 // reducer
-export default (state = { list: [] }, action) => {
+export default (state = {
+  list: [],
+  name: '',
+}, action) => {
   switch (action.type) {
     case INIT_LIST:
       // 初始化文章列表
       return { list: action.list };
+    case INIT_USER:
+      return { name: action.name };
     default:
       return state;
   }
@@ -34,4 +40,5 @@ export default (state = { list: [] }, action) => {
 // action creators
 export const actions = {
   initList: () => ({ type: INIT_LIST, list: data }),
+  initUser: () => ({ type: INIT_USER, name: '刘宁Leo' }),
 };
