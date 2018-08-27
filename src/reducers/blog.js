@@ -41,9 +41,9 @@ export default (state = {
 
 // action creators
 export const actions = {
-  initList: async () => {
+  initList: () => async (dispatch) => {
     const result = await fetch('/list');
-    return ({ type: INIT_LIST, list: result });
+    dispatch({ type: INIT_LIST, list: result });
   },
   initUser: () => ({ type: INIT_USER, name: '刘宁Leo' }),
 };
