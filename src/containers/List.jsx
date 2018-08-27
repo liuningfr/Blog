@@ -11,7 +11,7 @@ class List extends React.Component {
   render() {
     const { list } = this.props;
     return (
-     <ArticleList dataSouce={list} />
+      <ArticleList dataSouce={list} />
     );
   }
 };
