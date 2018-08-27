@@ -21,10 +21,7 @@ const data = [
 ];
 
 // reducer
-export default (state, action) => {
-  if (!state) {
-    state = { list: [] };
-  }
+export default (state = { list: [] }, action) => {
   switch (action.type) {
     case INIT_LIST:
       // 初始化文章列表
@@ -32,9 +29,9 @@ export default (state, action) => {
     default:
       return state;
   }
-}
+};
 
 // action creators
-export const initList = () => {
-  return { type: INIT_LIST, list: data };
-}
+export const actions = {
+  initList: () => ({ type: INIT_LIST, list: data }),
+};

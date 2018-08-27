@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { initList } from '../reducers/blog';
+import { actions } from '../reducers/blog';
 import ArticleList from '../components/Articles';
 
 class List extends React.Component {
@@ -8,29 +8,32 @@ class List extends React.Component {
     const { initList } = this.props;
     initList();
   }
+
   render() {
     const { list } = this.props;
+
     return (
       <ArticleList dataSouce={list} />
     );
   }
-};
+}
 
-const mapStateToProps = (state) => {
-  return {
+const mapStateToProps = (state) => (
+  {
     list: state.list,
-  };
-};
+  }
+);
 
-const mapDispatchToProps = (dispatch) => {
-  return {
+const mapDispatchToProps = (dispatch) => (
+  {
     initList: () => {
-      dispatch(initList());
+      dispatch(actions.initList());
     },
-  };
-};
+  }
+);
+
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(List);
