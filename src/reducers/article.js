@@ -21,7 +21,7 @@ export const actions = {
       method: 'post',
       body: JSON.stringify({ id }),
     }).then(response => response.json()).then(result => {
-      const data = result;
+      const data = result[0];
       dispatch({ type: GET_ARTICLE, detail: data });
     });
   },
