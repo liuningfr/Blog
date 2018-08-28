@@ -1,5 +1,6 @@
 const Koa = require('koa');
 const Router = require('koa-router');
+const KoaBody = require('koa-body');
 const Mysql = require('mysql');
 
 const app = new Koa();
@@ -11,6 +12,7 @@ const connection = Mysql.createConnection({
   password: 'avril1993',
   database: 'blog',
 });
+
 connection.connect();
 
 let data = null;
@@ -19,12 +21,17 @@ connection.query('select * from articles', (error, results) => {
   data = results;
 });
 
+router
+  .get('/list', ctx => {
+    ctx.body = data;
+  })
+  .post('/getdetail', ctx => {
+    console.log(ctx.request.body);
+  });
+
 connection.end();
 
-router.get('/list', ctx => {
-  ctx.body = data;
-});
-
+app.use(KoaBody());
 app
   .use(router.routes())
   .use(router.allowedMethods());

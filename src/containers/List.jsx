@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { actions } from '../reducers/blog';
-import ArticleList from '../components/Articles';
+import ArticlesList from '../components/ArticlesList';
 
 class List extends React.Component {
   componentDidMount() {
@@ -13,7 +13,7 @@ class List extends React.Component {
     const { list } = this.props;
 
     return (
-      <ArticleList dataSouce={list} />
+      <ArticlesList dataSouce={list} />
     );
   }
 }

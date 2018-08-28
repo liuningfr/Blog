@@ -6,7 +6,7 @@ class TopMenu extends React.Component {
   handleClick = (e) => {
     console.log(this.props);
     const { history } = this.props;
-    history.push(`/${e.key}`);
+    history.push(`${e.key}`);
   }
 
   render() {
@@ -17,11 +17,11 @@ class TopMenu extends React.Component {
           selectedKeys={['mail']}
           mode="horizontal"
           onClick={this.handleClick}>
-          <Menu.Item key="articles">
+          <Menu.Item key="/">
             <Icon type="book" />
             文章
           </Menu.Item>
-          <Menu.Item key="aboutme">
+          <Menu.Item key="/aboutme">
             <Icon type="user" />
             关于我
           </Menu.Item>

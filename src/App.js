@@ -12,6 +12,7 @@ const load = loader => Loadable({ loader, loading: Loading });
 
 const List = load(() => import('./containers/List'));
 const Me = load(() => import('./containers/Me'));
+const Article = load(() => import('./containers/Article'));
 
 
 const App = () => (
@@ -20,8 +21,8 @@ const App = () => (
       <Menu>
         <Switch>
           <Route exact path="/" component={List} />
-          <Route exact path="/articles" component={List} />
           <Route exact path="/aboutme" component={Me} />
+          <Route exact path="/articles/:id" component={Article} />
         </Switch>
       </Menu>
     </LocaleProvider>
