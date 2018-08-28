@@ -21,7 +21,7 @@ class Me extends React.Component {
 
 const mapStateToProps = (state) => (
   {
-    name: state.name,
+    name: state.blogReducer.name,
   }
 );
 

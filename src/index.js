@@ -9,7 +9,7 @@ import './index.css';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
-  combineReducers(blogReducer),
+  combineReducers({ blogReducer }),
   composeEnhancers(applyMiddleware(thunk)),
 );
 

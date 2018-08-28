@@ -20,7 +20,7 @@ class List extends React.Component {
 
 const mapStateToProps = (state) => (
   {
-    list: state.list,
+    list: state.blogReducer.list,
   }
 );
 
