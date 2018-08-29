@@ -17,21 +17,6 @@ const options = {
 const pool = Mysql.createPool(options);
 const p = Wrapper(pool);
 
-// const connection = Mysql.createConnection({
-//   host: 'localhost',
-//   user: 'root',
-//   password: 'avril1993',
-//   database: 'blog',
-// });
-
-// connection.connect();
-
-// let data = null;
-// connection.query('select * from articles', (error, results) => {
-//   if (error) throw error;
-//   data = results;
-// });
-
 router
   .get('/list', async ctx => {
     const data = await p.query('select * from articles');
@@ -48,5 +33,3 @@ app
   .use(router.routes())
   .use(router.allowedMethods());
 app.listen(3000);
-
-// connection.end();
