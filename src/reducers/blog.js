@@ -22,9 +22,9 @@ export default (state = {
 export const actions = {
   initList: () => async (dispatch) => {
     await fetch('/list').then(response => response.json()).then(result => {
-      const data = result;
+      const data = result || [];
       dispatch({ type: INIT_LIST, list: data });
-    });
+    }).catch(err => console.log(err));
   },
   initUser: () => ({ type: INIT_USER, name: '刘宁Leo' }),
 };

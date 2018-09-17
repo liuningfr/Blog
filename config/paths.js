@@ -1,4 +1,3 @@
-/* eslint-disable */
 'use strict';
 
 const path = require('path');
@@ -48,7 +47,6 @@ module.exports = {
   appIndexJs: resolveApp('src/index.js'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
-  appAssets: resolveApp('src/assets'),
   yarnLockFile: resolveApp('yarn.lock'),
   testsSetup: resolveApp('src/setupTests.js'),
   appNodeModules: resolveApp('node_modules'),
